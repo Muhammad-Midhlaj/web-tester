@@ -20,13 +20,13 @@ This Python script is designed for security professionals and developers to cond
 Clone the repository to your local machine:
 
 ```sh
-git clone https://your-repository-url-here
+git clone https://github.com/Muhammad-Midhlaj/web-tester.git
 ```
 
 Navigate to the cloned directory:
 
 ```sh
-cd path-to-cloned-directory
+cd web-tester
 ```
 
 ## Usage
