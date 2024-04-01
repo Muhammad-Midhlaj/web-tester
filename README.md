@@ -3,12 +3,16 @@
 # Web Security Testing Tool
 
 This Python script is designed for security professionals and developers to conduct basic security assessments on web applications. It evaluates the security posture of web applications by checking for essential HTTP security headers, the allowance of the HTTP OPTIONS method, and cookie security configurations.
+---
 
 ## Features
 
-- **Security Headers Check**: Verifies the presence of crucial HTTP security headers.
-- **OPTIONS Method Analysis**: Determines if the HTTP OPTIONS method is enabled and identifies allowed methods.
-- **Cookie Security**: Assesses cookies for security flags like `Secure`.
+- **Security Headers Check**: Verifies the presence of crucial HTTP security headers such as `Strict-Transport-Security`, `Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and `Permissions-Policy`.
+- **OPTIONS Method Analysis**: Determines if the HTTP OPTIONS method is enabled on the target server and identifies which HTTP methods are allowed, providing insights into potential misconfigurations or overly permissive CORS policies.
+- **Cookie Security**: Assesses cookies set by the server for security-enhancing flags, specifically the `Secure` flag, which ensures cookies are sent only over secure HTTPS connections, and the `HttpOnly` flag, which prevents access to cookie values via JavaScript, mitigating the risk of cross-site scripting (XSS) attacks.
+- **SSL/TLS Version Check**: Evaluates the SSL/TLS configuration of the target server by establishing a connection and identifying the version of the SSL/TLS protocol in use. This check helps in identifying outdated or insecure SSL/TLS versions that could make the server vulnerable to attacks such as POODLE or BEAST.
+
+---
 
 
 ## Installation
