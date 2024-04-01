@@ -115,6 +115,11 @@ def check_ssl_tls(url):
                 print(f"\nSSL/TLS version used: {ssl_version}")
             except Exception as e:
                 print(f"\nSSL/TLS check failed: {e}")
+def ensure_url_scheme(url):
+    parsed_url = urlparse(url)
+    if not parsed_url.scheme:  # If the scheme is missing, default to https
+        url = "https://" + url
+    return url
 
 if __name__ == "__main__":
     os.system('clear')
@@ -122,7 +127,8 @@ if __name__ == "__main__":
     ascii_banner = pyfiglet.figlet_format("Web-Tester")
     print(ascii_banner + "BY MIDHLAJ")
     # Prompt the user for the URL input
-    url = input("\nEnter the URL: ")
+    input_url = input("\nEnter the URL: ")
+    url = ensure_url_scheme(input_url)
     check_security_headers(url)
     check_options_method_allowed(url)
     check__cookie_without_secure_flag(url)
